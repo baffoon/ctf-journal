@@ -4,4 +4,4 @@
 
 ## Introduction
 
-Currently, this is an empty repository. It is yet to come.
+Currently, this is an empty repository. It has yet to come.
