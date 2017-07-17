@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# otw-bandit.py
+# bandit.py
 # Author: Timothy Loftus (baffoon)
 # Date Created: 06/04/2017
 #
@@ -16,7 +16,9 @@ user = [
         ]
 passwd = [
         'bandit0',
-        '',
+        'boJ9jbbUNNfktd78OOpsqOltutMc3MY1',
+        'CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9',
+        ''
         ]
 host = "bandit.labs.overthewire.org"
 port = 2220
@@ -246,3 +248,61 @@ def banditLvl0ToLvl1Solution(user, hostname, port, passwd):
 
     client.close() # Closing the ssh session.
 
+def banditLvl1ToLvl2Solution(user, hostname, port, passwd):
+    """
+    Solution:
+    Wargame: OverTheWire - Bandit
+    Level 1 --> Level 2
+
+    Solution for getting to Level 2 in bandit. This challeng is intended to make someone learn
+    how dashed (-) filenames work in Linux. It also forces one to learn how to actually read these
+    kinds of files.
+    """
+
+    print("\n{}[*]{} Wargame: OverTheWire - Bandit - Level 1 --> Level 2:".format(bcolors.GREEN, bcolors.ENDC))
+
+    print("{}[*]{} Author: Timothy Loftus (baffoon)".format(bcolors.GREEN, bcolors.ENDC))
+    print("{}[*]{} Entry Date: June 11, 2017".format(bcolors.GREEN, bcolors.ENDC))
+    print("{}[*]{} Last Edit: July 11, 2017\n".format(bcolors.GREEN, bcolors.ENDC))
+
+    print("{}[*]{} Introduction: \n".format(bcolors.GREEN, bcolors.ENDC))
+
+    print("{}[*]{} The password for the next level is stored in a file called \"-\" located in the home directory.\n".format(bcolors.GREEN, bcolors.ENDC))
+
+    print("{}[*]{} Commands needed for the next level: \n".format(bcolors.GREEN, bcolors.ENDC))
+
+    print("{}[*]{} ls, cd, cat, file, du, find\n".format(bcolors.GREEN, bcolors.ENDC))
+
+    print("{}[*]{} Write-up - Level 1 --> Level 2: \n".format(bcolors.GREEN, bcolors.ENDC))
+
+    print("{}[*]{} Initiating ssh client...".format(bcolors.GREEN, bcolors.ENDC))
+
+    client = paramiko.SSHClient()
+
+    print("{}[*]{} Adding host_key using paramikos AutoAddPolicy...".format(bcolors.GREEN, bcolors.ENDC))
+
+    client.set_missing_host_key_policy(AutoAddPolicy())
+
+    print("{}[*]{} The host_key has been added to known_hosts...".format(bcolors.GREEN, bcolors.ENDC))
+
+    try:
+        print("{}[*]{} Attempting ssh connection to...".format(bcolors.GREEN, bcolors.ENDC))
+        print("{}[*]{} Username: {}".format(bcolors.GREEN, bcolors.ENDC, user))
+        print("{}[*]{} Hostname (FQDN): {}".format(bcolors.GREEN, bcoloors.ENDC, hostname))
+        print("{}[*]{} Port: {}".format(bcolors.GREEN, bcolors.ENDC, str(port)))
+
+        client.connect(hostname, port=port, user, password=passwd)
+
+    # But what if the host key doesn't exist in the file.
+    # Well, it wont because I'm not that for in it's development.
+    except paramiko.client.BadHostKeyException as ValidHostKeyErr:
+
+        print("{}[!] Failure to validate hostkey...{}".format(bcolors.RED, bcolors.ENDC))
+
+    # What if there is no internet connection?
+    except paramiko.client.socket.err as SshSocketErr:
+
+        print("{}[!] Failure to connect to server... Bad socket...{}".format(bcolors.RED, bcolors.ENDC))
+        print("{}[!] I recommend that you check your internet connection...{}".format(bcolors.RED, bcolors.ENDC))
+
+    print("{}[*]{} Connection successful. Results can be found below...".format(bcolors.GREEN, bcolors.ENDC))
