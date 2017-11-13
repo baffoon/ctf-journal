@@ -5,6 +5,8 @@
 # Written by Timothy Loftus (baffoon)
 #
 
+import otwBanditMain # Going to need to figure out how to fix...
+
 def overTheWireMenu():
     """The over the wire menu."""
     title = "\nOver The Wire Writeups\n\n"
@@ -30,4 +32,4 @@ def overTheWireMain():
         if str(otwInput) is 'quit' or 'exit' or '':
             break
         elif str(otwInput) is '1':
-            break
+            otwBanditMain()
