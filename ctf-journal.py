@@ -67,5 +67,4 @@ def main():
         if str(ctfInput) == "quit" or "exit" or "":
             break
 
-
 main()
