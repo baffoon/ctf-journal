@@ -5,7 +5,7 @@
 # Written by Timothy Loftus (baffoon)
 #
 
-import otwBanditMain # Going to need to figure out how to fix...
+from src.OverTheWire.otwBandit import otwBanditMain # Going to need to figure out how to fix...
 
 def overTheWireMenu():
     """The over the wire menu."""
@@ -29,7 +29,9 @@ def overTheWireMain():
     while 1:
         overTheWireMenu()
         otwInput = input("\n[ ctf-journal ][ OverTheWire ] > ")
-        if str(otwInput) is 'quit' or 'exit' or '':
-            break
-        elif str(otwInput) is '1':
+        if str(otwInput) is '1':
             otwBanditMain()
+        elif str(otwInput) is 'quit' or 'exit' or '':
+            break
+
+#overTheWireMain()

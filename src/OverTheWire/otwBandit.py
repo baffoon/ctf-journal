@@ -37,7 +37,7 @@ def otwBanditLevel0():
         host,
         port=port,
         username=usrLst[0],
-        password=passwdDic[0]
+        password=passwdDic["bandit0"]
     )
     stdin, stdout, stderr = client.exec_command("echo 'This is a test...'")
     print (stdout)
@@ -53,7 +53,7 @@ def otwBanditMenu():
     title += "documentation will also be provided in the docs/ directory.\n\n"
     title += "Over The Wire - Bandit - Solutions:\n\n"
 
-    otwBanditCallLst = [
+    otwBanditChallLst = [
     "0. Bandit - Level 0",
     "1. Bandit - Level 0 --> Level 1",
     "2. Bandit - Level 1 --> Level 2",
@@ -63,6 +63,7 @@ def otwBanditMenu():
     ]
 
     print (title)
+    print ("Note: Currently unable to connect to bandit. Will continue writing when I can.\n\n")
     for challenge in otwBanditChallLst:
         print (challenge)
 
@@ -70,11 +71,12 @@ def otwBanditMain():
     """Main handler for Over The Wire - Bandit."""
     otwBanditMenu()
     otwBanditMenuInput = input("\n[ ctf-journal ][ otw-bandit ] > ")
-    if str(otwBanditMenuInput) == "0":
-        otwBanditLevel0()
-    elif str(otwBanditMenuInput) == "1":
-        break
-    elif str(otwBanditMenuInput) == "2":
-        break
-    elif str(otwBanditMenuInput) == "quit" or "exit" or "":
-        break
+    while 1:
+        if str(otwBanditMenuInput) == "0":
+            otwBanditLevel0()
+        elif str(otwBanditMenuInput) == "1":
+            break
+        elif str(otwBanditMenuInput) == "2":
+            break
+        elif str(otwBanditMenuInput) == "quit" or "exit" or "":
+            break
