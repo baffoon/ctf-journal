@@ -33,7 +33,7 @@ def vulnhubMenu():
 
 def vulnhubMain():
     """This will be used to handle the vulnub machine menu."""
-    while 1:
+    while True:
         vulnhubMenu()
         vulnhubMenuInput = input ("\n[ ctf-journal ][ vulnhub-vms ] > ")
         if str(vulnhubMenuInput) == "1":

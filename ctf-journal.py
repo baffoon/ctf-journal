@@ -49,7 +49,7 @@ def menu():
 
 def main():
     """Main for the program"""
-    while 1:
+    while True:
         menu()
         ctfInput = input("\n[ ctf-journal ] > ")
         if str(ctfInput) == "1":

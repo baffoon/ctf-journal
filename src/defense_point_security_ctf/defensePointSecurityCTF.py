@@ -26,7 +26,7 @@ def defensePointSecurityMenu():
 
 def defensePointSecurityMain():
     """Man handler for the Defense Point Security CTF writeups."""
-    while 1:
+    while True:
         defensePointSecurityMenu()
         defensePointSecurityCTFInput = input("[ ctf-journal ][ dps-ctf ] > ")
         if str(defensePointSecurityCTFInput) == "1":

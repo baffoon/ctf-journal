@@ -37,7 +37,7 @@ def rootMeDotOrgMenu():
 
 def rootMeDotOrgMain():
     """Main for the root-me.org challenge categories."""
-    while 1:
+    while True:
         rootMeDotOrgMenu()
         rootMeDotOrgCatInput = input("\n[ ctf-journal ][ root-me.org ] > ")
         if str(rootMeDotOrgCatInput) == "1":

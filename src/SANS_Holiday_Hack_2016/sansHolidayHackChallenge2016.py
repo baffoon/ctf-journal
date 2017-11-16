@@ -29,7 +29,7 @@ def sansHolidayHack2016Menu():
 
 def sansHolidayHack2016Main():
     """Main handler for for SANs Holiday Hack Challenge 2016 Menu"""
-    while 1:
+    while True:
         sansHolidayHack2016Menu()
         sansHolidayHack2016MainInput = input("\n[ ctf-journal ][ SANS_Holiday_Hack_Chall_2016 ] > ")
         if str(sansHolidayHack2016MainInput) == "1":
